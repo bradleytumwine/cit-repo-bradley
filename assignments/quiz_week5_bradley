@@ -1,0 +1,81 @@
+#1.Using classes, Create a basic banking application with the following features:
+    #Create a class called BankAccount with the following attributes:
+        #account_number - a string
+        #balance - a float
+        #owner - a string
+        #type - a string
+class BankAccount:
+    def _init_(self,account_number, balance, owner, type ):
+        self.account_number = account_number
+        self.balance = balance
+        self.owner = owner
+        self.type = type
+
+    #ii.Create a class called Bank with the following attributes:
+        #name - a string
+        #accounts - a list of BankAccount objects
+class Bank:
+    def _init_(self,name,accounts):
+        self.name = name
+        self.accounts = accounts
+
+    #iii.Create a class called Customer with the following attributes:
+        #name - a string
+        #accounts - a list of BankAccount objects
+class Customer:
+    def _init_(self, name, accounts):
+        self.name = name
+        self.accounts = accounts
+
+    #iv.Create a class called Transactions with the following attributes:
+        #1. `account` - a `BankAccount` object
+        #2. `amount` - a float
+        #3. `type` - a string
+class Transactions:
+    def _init_(self, account, amount, type):
+        self.account = account
+        self.amount  = amount
+        self. type = type
+
+#The application should have the following functionality:
+    #Create a new Bank object
+    #Create a new Customer object
+    #Create a new BankAccount object
+    #Add the BankAccount object to the Bank object
+    #Add the BankAccount object to the Customer object
+    #Print the Bank object
+    #Print the Customer object
+    #Print the BankAccount object
+    #Create a new Transaction object
+    #Add the Transaction object to the BankAccount object
+
+Account_1 = BankAccount('98712345', 300000.00,'Bradley Tumwine', 'Corporate')  #BankAccount object
+
+lst = [[Account_1.account_number, Account_1.balance, Account_1.owner, Account_1.type],[]] #list of bank account objects
+
+Bank_object =Bank('Bradley Tumwine', lst[0]) #Bank object
+
+Cus = Customer('Bradley Tumwine', lst[0])
+
+print (f'''
+           BankAccount object
+           Account Number : {Account_1.account_number}
+           Account Balance: {Account_1.balance}
+           Account Name   : {Account_1.owner}
+           Account Type   : {Account_1.type} ''') #Print the BankAccount object
+
+print(f''' 
+           Bank object
+           Account Number : {Bank_object.accounts[0]}
+           Account Balance: {Bank_object.accounts[1]}
+           Account Name   : {Bank_object.name}
+           Account Type   : {Bank_object.accounts[3]} ''') #Print the Bank object
+
+print(f''' 
+           Customer object
+           Account Number : {Cus.accounts[0]}
+           Account Balance: {Cus.accounts[1]}
+           Account Name   : {Cus.name}
+           Account Type   : {Cus.accounts[3]} ''') #Print the Customer object
+
+trans = Transactions(lst[0], 300000.00, 'Corporate Account') #Create a new Transaction object
